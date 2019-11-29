@@ -1,0 +1,2 @@
+#git pull on each subdir
+ls -d ./* | xargs -I {} bash -c "cd '{}' && pwd &&  git pull"
