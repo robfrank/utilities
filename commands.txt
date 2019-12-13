@@ -1,2 +1,5 @@
 #git pull on each subdir
 ls -d ./* | xargs -I {} bash -c "cd '{}' && pwd &&  git pull"
+
+#mvn clean install skipping tests on each subdir
+ls -d ./* | xargs -I {} bash -c "cd '{}' && pwd &&  mvn clean install -DskipTests"
