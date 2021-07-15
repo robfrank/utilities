@@ -1,5 +1,9 @@
 #git pull on each subdir
 ls -d ./* | xargs -I {} bash -c "cd '{}' && pwd &&  git pull"
 
+#git pull on each subdir with a pom.xml
+ls -d ./*/pom.xml | xargs -I {} dirname {} | xargs -I {} bash -c "cd '{}' && pwd &&  git pull"
+
 #mvn clean install skipping tests on each subdir
 ls -d ./* | xargs -I {} bash -c "cd '{}' && pwd &&  mvn clean install -DskipTests"
+
