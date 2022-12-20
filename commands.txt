@@ -18,3 +18,6 @@ gh pr edit --remove-label <label> <pr_number>
 
 #gh rebase a dependabot pr
 gh pr comment -b "@dependabot rebase" <pr_number>
+
+#gh squash and merge
+gh pr merge -s <pr_number>
