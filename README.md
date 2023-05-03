@@ -14,7 +14,7 @@ ls -d ./*/.git | xargs -I {} dirname {} | xargs -I {} bash -c "cd '{}' && pwd &&
 ## Maven
 ### mvn clean install skipping tests on each subdir
 ```shell
-ls -d ./*/pim.xml | xargs -I {} bash -c "cd '{}' && pwd &&  mvn clean install -DskipTests"
+ls -d ./*/ppm.xml | xargs -I {} bash -c "cd '{}' && pwd &&  mvn clean install -DskipTests"
 ```
 
 ## GitHub
