@@ -23,6 +23,11 @@ ls -d ./*/ppm.xml | xargs -I {} bash -c "cd '{}' && pwd &&  mvn clean install -D
 gh pr review --approve <pr_number>
 ```
 
+### gh approve multiple PRs
+```shell
+./approve-pr.sh <pr_number_1> <pr_number_2> <pr_number_3>
+```
+
 ### gh add a label to a PR
 ```shell
 gh pr edit --add-label <label> <pr_number>
@@ -38,7 +43,22 @@ gh pr edit --remove-label <label> <pr_number>
 gh pr comment -b "@dependabot rebase" <pr_number>
 ```
 
+### gh rebase multiple dependabot prs
+```shell
+./dependanbot-rebase.sh <pr_number_1> <pr_number_2> <pr_number_3>
+```
+
 ### gh squash and merge
 ```shell
 gh pr merge -s <pr_number>
+```
+
+### gh squash and merge multiple prs
+```shell
+./squash_merge.sh <pr_number_1> <pr_number_2> <pr_number_3>
+```
+
+### gh squash and merge list of approved prs
+```shell
+./squash_merge.sh $(gh pr list --json number --label "dependency_approved" | jq -r '[.[].number] | join(" ")')
 ```
