@@ -1,4 +1,4 @@
-# Command line commands
+# Scripts and tricks
 
 ## Git
 
